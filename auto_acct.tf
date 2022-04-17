@@ -1,8 +1,7 @@
 # Create an Automation Account for every LAW
 resource "azurerm_automation_account" "auto_acct" {
-  count = length(var.name)
-  
-  name                = var.name[count.index]
+    
+  name                = local.auto_account_name
   location            = var.location 
   resource_group_name = var.resource_group_name
 
